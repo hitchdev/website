@@ -1,0 +1,5 @@
+output
+public
+content/strictyaml
+hitch/gen
+hitch/__pycache__

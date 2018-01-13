@@ -1,0 +1,61 @@
+baseurl = "https://example.org/"
+languageCode = "en-us"
+title = "HitchDev"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+pygmentsCodeFences = true
+pygmentsUseClassic = false
+pygmentsUseClasses = true
+PygmentsStyle = "fruity"
+
+[params]
+	# General information
+	author = "Colm O'Connor"
+	description = "The code that specifies | builds | runs | tests | documents your code."
+	copyright = "Copyright (C) 2017"
+
+	# Repository
+# 	provider = "GitHub"
+# 	repo_url = "https://github.com/hitchdev/"
+
+	version = ""
+	logo = "images/logo.png"
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+	[params.palette]
+    	primary = "green"
+    	accent  = "teal"
+
+    [params.font]
+    	text = "Ubuntu"
+    	code = "Ubuntu Mono"
+
+
+[social]
+	twitter = ""
+	github  = "hitchdev"
+	email   = ""
+
+[[menu.main]]
+	name   = "StrictYAML"
+	url    = "strictyaml/"
+	weight = 10
+
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true
