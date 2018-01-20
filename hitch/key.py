@@ -1,13 +1,13 @@
 from commandlib import python_bin, Command, CommandError
 from hitchrun import DIR, expected
+from pathquery import pathq
 import patoolib
 import shutil
 
-
-hugo_cmd = Command(DIR.gen/"hugo"/"hugo").in_dir(DIR.project)
+hugo_dir = DIR.gen / "hugo"
 
 def install():
-    if not DIR.gen.joinpath("hugo").exists():
+    if not hugo_dir.exists():
         Command(
             "wget", 
             "https://github.com/gohugoio/hugo/releases/download/v0.31.1/hugo_0.31.1_Linux-64bit.tar.gz",
@@ -15,15 +15,16 @@ def install():
     
         DIR.gen.chdir()
         patoolib.extract_archive(DIR.gen/"hugo_0.31.1_Linux-64bit.tar.gz")
-        DIR.gen.joinpath("hugo_0.31.1_Linux-64bit.tar/").move(DIR.gen.joinpath("hugo"))
+        DIR.gen.joinpath("hugo_0.31.1_Linux-64bit.tar/").move(hugo_dir)
         DIR.gen.joinpath("hugo_0.31.1_Linux-64bit.tar.gz").remove()
+
 
 @expected(CommandError)
 def hugo(*args):
     """
     Run Hugo
     """
-    hugo_cmd(*args).run()
+    Command(hugo_dir/"hugo").in_dir(DIR.project)(*args).run()
   
 
 @expected(CommandError)
@@ -31,7 +32,6 @@ def copystrictyaml():
     """
     Copy strictyaml
     """
-    import pypandoc
     Command("hk", "docgen").in_dir(DIR.project.parent/"strictyaml").run()
     strictyaml_docs = DIR.project.parent/"strictyaml"/"hitch"/"gen"/"docs"
     
@@ -46,10 +46,31 @@ def copystrictyaml():
         if write_path_md.exists():
             write_path_md.remove()
         document.copy(write_path_md)
-        #pypandoc.convert_file(
-            #str(document),
-            #"markdown",
-            #format="rst",
-            #outputfile=str(write_path_md),
-        #)
+
+
+def test():
+    copystrictyaml()
     hugo("serve")
+
+
+@expected(CommandError)
+def publish():
+    html_in = DIR.project / "public"
+    html_in.rmtree(ignore_errors=True)
+    html_in.mkdir()
+    print("Building...")
+    copystrictyaml()
+    hugo()
+    print("Moving...")
+    
+    for filepath in list(pathq(html_in)):
+        dest = DIR.project.parent.joinpath("hitchdev.github.io", filepath.relpath(html_in))
+        if not dest.dirname().exists():
+            dest.dirname().makedirs()
+        if not filepath.isdir():
+            filepath.copy(dest)
+        print(dest)
+        
+        
+    #import IPython ; IPython.embed()
+    #filepath.copytree(DIR.project.parent.joinpath("hitchdev.github.io"))

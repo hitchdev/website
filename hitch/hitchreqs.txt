@@ -19,7 +19,8 @@ markupsafe==1.0           # via jinja2
 mkdocs-bootswatch==0.4.0
 mkdocs==0.16.3
 parso==0.1.0              # via jedi
-path.py==10.5             # via hitchrun, prettystack
+path.py==10.5             # via hitchrun, pathquery, prettystack
+pathquery==0.2.2
 patool==1.12
 pelican==3.7.1
 pexpect==4.3.0            # via ipython
