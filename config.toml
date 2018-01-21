@@ -1,4 +1,4 @@
-baseurl = "https://example.org/"
+baseurl = "http://hitchdev.com/"
 languageCode = "en-us"
 title = "HitchDev"
 theme = "hugo-material-docs"
