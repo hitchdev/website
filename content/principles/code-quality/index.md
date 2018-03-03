@@ -2,16 +2,18 @@
 title: Code quality principles
 ---
 
-These are our set of non-functional code quality principles. I wrote them as a guide for the kind of thing I'm looking for in pull requests. They may have broader applicability than that.
+Improved code quality is about reduced code maintenance costs.
 
-Note that these principles are all *trade offs* and their application should always be cost/benefit driven.
+All of the principles here are important but they ought to be applied on a cost/benefit basis. They are all trade offs. There is *sometimes* a right answer (when improving code quality incurs a very small cost, you should always do it). There is sometimes no right answer.
 
 Therefore:
 
-* Code quality principles should *not* be applied religiously.
-* They will conflict (e.g. some code might have higher cohesion but not be as DRY) and in such cases the costs and benefit of following each principle should be acknowledged before deciding which one to prioritize.
-* Perfectionism is a curse. It's often better to get code out there and used instead of obsessing over its quality.
+* If maintenance costs of your system are not important, these principles may not be either.
 * Building the wrong thing in the right way slowly is *far* worse than building the wrong thing in the wrong way quickly.
+* Functional requirements (features, bugs, speed) may sometimes take precedence over maintenance cost.
+* Code quality principles should *not* be applied religiously - everything here is a trade off.
+* They will conflict (e.g. some code might have higher cohesion but not be as DRY) and in such cases the costs and benefit of following each principle should be acknowledged before deciding which one to prioritize.
+* Perfectionism is a curse.
 
 Principles:
 
