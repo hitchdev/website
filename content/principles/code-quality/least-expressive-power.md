@@ -9,6 +9,11 @@ Examples
 * The story of JSON
 * Whither garbage collector
 * Metaprogramming
+* LINQ vs. C#
+* SQL vs. imperative
+* DSL traps
+* C++ templating language
+* 
 
 
 Subprinciples
@@ -16,6 +21,10 @@ Subprinciples
 
 These are principles which I think can partially be derived from this principle.
 
+* Immutability vs. Mutability (side effects)
+* Accidental turing completeness
+* State isolation
+* Lazy evaluation
 * Principle of least privilege in protocol design - https://en.wikipedia.org/wiki/Principle_of_least_privilege
 
 Other people talking about the same principle

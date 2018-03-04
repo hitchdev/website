@@ -2,7 +2,7 @@
 title: Code quality principles
 ---
 
-Improved code quality is about reduced code maintenance costs.
+Improved code quality is about reduced code maintenance costs. Code quality consideration is *not* a religious exercise, it is a budgeting exercise.
 
 All of the principles here are important but they ought to be applied on a cost/benefit basis. They are all trade offs. There is *sometimes* a right answer (when improving code quality incurs a very small cost, you should always do it). There is sometimes no right answer.
 
