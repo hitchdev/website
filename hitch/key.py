@@ -35,6 +35,8 @@ def copystrictyaml():
     Command("hk", "docgen").in_dir(DIR.project.parent/"strictyaml").run()
     strictyaml_docs = DIR.project.parent/"strictyaml"/"hitch"/"gen"/"docs"
     
+    DIR.project.joinpath("content", "strictyaml").rmtree(ignore_errors=True)
+    
     for document in list(strictyaml_docs.walkfiles()):
         relative_path = document.replace(strictyaml_docs, "")
         content_path = DIR.project.joinpath("content", "strictyaml")
@@ -55,6 +57,9 @@ def test():
 
 @expected(CommandError)
 def publish():
+    """
+    Push changes to hitchdev.com.
+    """
     html_in = DIR.project / "public"
     html_in.rmtree(ignore_errors=True)
     html_in.mkdir()
@@ -62,15 +67,10 @@ def publish():
     copystrictyaml()
     hugo()
     print("Moving...")
-    
     for filepath in list(pathq(html_in)):
         dest = DIR.project.parent.joinpath("hitchdev.github.io", filepath.relpath(html_in))
         if not dest.dirname().exists():
             dest.dirname().makedirs()
         if not filepath.isdir():
-            filepath.copy(dest)
+            filepath.copy(dest.dirname())
         print(dest)
-        
-        
-    #import IPython ; IPython.embed()
-    #filepath.copytree(DIR.project.parent.joinpath("hitchdev.github.io"))
