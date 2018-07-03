@@ -1,4 +1,4 @@
-baseurl = "http://hitchdev.com/"
+baseurl = "https://hitchdev.com/"
 languageCode = "en-us"
 title = "HitchDev"
 theme = "hugo-material-docs"
@@ -15,7 +15,7 @@ PygmentsStyle = "fruity"
 	# General information
 	author = "Colm O'Connor"
 	description = "The code that specifies | builds | runs | tests | documents your code."
-	copyright = "Copyright (C) 2017"
+	copyright = "Copyright (C) 2018"
 
 	# Repository
 # 	provider = "GitHub"
