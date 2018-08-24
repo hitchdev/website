@@ -4,6 +4,7 @@ title = "HitchDev"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
+
 # Enable Google Analytics by entering your tracking id
 googleAnalytics = ""
 pygmentsCodeFences = true
@@ -53,9 +54,14 @@ PygmentsStyle = "fruity"
 	url    = "strictyaml/"
 	weight = 10
 
+[[menu.main]]
+	name   = "HitchStory"
+	url    = "hitchstory/"
+	weight = 10
+
 
 [blackfriday]
-	smartypants	= true
+	smartypants = true
 	fractions = true
 	smartDashes = true
 	plainIDAnchors = true

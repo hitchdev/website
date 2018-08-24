@@ -7,6 +7,7 @@ type: index
 HitchDev is a group of small, self contained open source dogfooded python
 libraries.
 
-At the moment just one is documented:
+At the moment just two projects are documented:
 
 - [StrictYAML](strictyaml)
+- [HitchStory](hitchstory)

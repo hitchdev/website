@@ -1,6 +1,7 @@
 output
 public
 content/strictyaml
+content/hitchstory
 hitch/gen
 hitch/__pycache__
 *.kate-swp

@@ -28,18 +28,18 @@ def hugo(*args):
   
 
 @expected(CommandError)
-def copystrictyaml():
+def buildprojectdocs(projectdir, projectname):
     """
     Copy strictyaml
     """
-    Command("hk", "docgen").in_dir(DIR.project.parent/"strictyaml").run()
-    strictyaml_docs = DIR.project.parent/"strictyaml"/"hitch"/"gen"/"docs"
+    Command("hk", "docgen").in_dir(DIR.project.parent/projectdir).run()
+    project_docs = DIR.project.parent/projectdir/"hitch"/"gen"/"docs"
     
-    DIR.project.joinpath("content", "strictyaml").rmtree(ignore_errors=True)
+    DIR.project.joinpath("content", projectname).rmtree(ignore_errors=True)
     
-    for document in list(strictyaml_docs.walkfiles()):
-        relative_path = document.replace(strictyaml_docs, "")
-        content_path = DIR.project.joinpath("content", "strictyaml")
+    for document in list(project_docs.walkfiles()):
+        relative_path = document.replace(project_docs, "")
+        content_path = DIR.project.joinpath("content", projectname)
         write_path = content_path.joinpath(relative_path[1:])
         write_path_md = write_path.dirname().joinpath("{0}.md".format(write_path.namebase))
         
@@ -51,7 +51,8 @@ def copystrictyaml():
 
 
 def test():
-    copystrictyaml()
+    buildprojectdocs("strictyaml", "strictyaml")
+    buildprojectdocs("story", "hitchstory")
     hugo("serve")
 
 
