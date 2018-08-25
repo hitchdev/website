@@ -7,12 +7,15 @@ import shutil
 hugo_dir = DIR.gen / "hugo"
 
 def install():
+    """
+    Set up hugo.
+    """
     if not hugo_dir.exists():
         Command(
             "wget", 
             "https://github.com/gohugoio/hugo/releases/download/v0.31.1/hugo_0.31.1_Linux-64bit.tar.gz",
         ).in_dir(DIR.gen).run()
-    
+
         DIR.gen.chdir()
         patoolib.extract_archive(DIR.gen/"hugo_0.31.1_Linux-64bit.tar.gz")
         DIR.gen.joinpath("hugo_0.31.1_Linux-64bit.tar/").move(hugo_dir)
@@ -25,34 +28,43 @@ def hugo(*args):
     Run Hugo
     """
     Command(hugo_dir/"hugo").in_dir(DIR.project)(*args).run()
-  
+
 
 @expected(CommandError)
 def buildprojectdocs(projectdir, projectname):
     """
-    Copy strictyaml
+    Build documentation from a project.
     """
     Command("hk", "docgen").in_dir(DIR.project.parent/projectdir).run()
     project_docs = DIR.project.parent/projectdir/"hitch"/"gen"/"docs"
-    
+
     DIR.project.joinpath("content", projectname).rmtree(ignore_errors=True)
-    
+
     for document in list(project_docs.walkfiles()):
         relative_path = document.replace(project_docs, "")
         content_path = DIR.project.joinpath("content", projectname)
         write_path = content_path.joinpath(relative_path[1:])
         write_path_md = write_path.dirname().joinpath("{0}.md".format(write_path.namebase))
-        
+
         if not write_path_md.dirname().exists():
             write_path_md.dirname().makedirs()
         if write_path_md.exists():
             write_path_md.remove()
         document.copy(write_path_md)
 
-
-def test():
+def buildall():
+    """
+    Build all docs for all projects.
+    """
     buildprojectdocs("strictyaml", "strictyaml")
     buildprojectdocs("story", "hitchstory")
+
+
+def test():
+    """
+    Build all docs for all projects and run a test hugo server.
+    """
+    buildall()
     hugo("serve")
 
 
@@ -65,7 +77,7 @@ def publish():
     html_in.rmtree(ignore_errors=True)
     html_in.mkdir()
     print("Building...")
-    copystrictyaml()
+    buildall()
     hugo()
     print("Moving...")
     for filepath in list(pathq(html_in)):
