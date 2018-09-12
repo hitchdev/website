@@ -2,6 +2,8 @@
 title: Write code with the least expressive power
 ---
 
+Write code with the least expressive power necessary is a [tradeoff principle of code quality].
+
 Examples
 --------
 
@@ -11,28 +13,25 @@ Examples
 * Metaprogramming
 * LINQ vs. C#
 * SQL vs. imperative
-* DSL traps
+* The DSL merry-go-round
 * C++ templating language
-* 
 
 
 Subprinciples
 -------------
 
-These are principles which I think can partially be derived from this principle.
+These are principles which can be partially or in whole be derived from this principle.
 
 * Immutability vs. Mutability (side effects)
-* Accidental turing completeness
 * State isolation
 * Lazy evaluation
-* Principle of least privilege in protocol design - https://en.wikipedia.org/wiki/Principle_of_least_privilege
+* [Principle of least privilege in protocol design](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
 
 Other people talking about the same principle
 ---------------------------------------------
 
-Commentary: While most of these discuss languages as if their power is uniform
-and static I consider this to wrong. There are languages which have a diversity
-of approaches and which have more powerful features and less powerful features.
+These explanations discuss languages as if their power is uniform and static, whereas this principle
+also applies to problems and the power of features used to solve them within the same language.
 
 * https://www.w3.org/DesignIssues/Principles.html#PLP (treats 'language power' as uniform across a programming language - although it can vary from feature to feature - e.g. functional vs. imperative).
 

@@ -59,6 +59,11 @@ PygmentsStyle = "fruity"
 	url    = "hitchstory/"
 	weight = 10
 
+[[menu.main]]
+	name   = "SeleniumDirector"
+	url    = "seleniumdirector/"
+	weight = 10
+
 
 [blackfriday]
 	smartypants = true

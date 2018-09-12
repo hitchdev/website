@@ -2,6 +2,7 @@ output
 public
 content/strictyaml
 content/hitchstory
+content/seleniumdirector
 hitch/gen
 hitch/__pycache__
 *.kate-swp
