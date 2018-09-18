@@ -16,7 +16,7 @@ def install():
             "https://github.com/gohugoio/hugo/releases/download/v0.31.1/hugo_0.31.1_Linux-64bit.tar.gz",
         ).in_dir(DIR.gen).run()
 
-        DIR.gen.chdir()
+        DIR.gen.chdir()cat
         patoolib.extract_archive(DIR.gen/"hugo_0.31.1_Linux-64bit.tar.gz")
         DIR.gen.joinpath("hugo_0.31.1_Linux-64bit.tar/").move(hugo_dir)
         DIR.gen.joinpath("hugo_0.31.1_Linux-64bit.tar.gz").remove()
@@ -72,7 +72,7 @@ def test():
 @expected(CommandError)
 def publish():
     """
-    Push changes to hitchdev.com.
+    Copy changes to hitchdev.com directory.
     """
     html_in = DIR.project / "public"
     html_in.rmtree(ignore_errors=True)
@@ -88,3 +88,13 @@ def publish():
         if not filepath.isdir():
             filepath.copy(dest.dirname())
         print(dest)
+
+
+@expected(CommandError)
+def push():
+    """
+    Push changes in hitchdev.github.com.
+    """
+    git = Command("git").in_dir(DIR.project/".."/"hitchdev.github.io")
+    git("commit", "-m", "Updates").run()
+    git("push").run()
