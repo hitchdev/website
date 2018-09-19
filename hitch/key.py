@@ -16,7 +16,7 @@ def install():
             "https://github.com/gohugoio/hugo/releases/download/v0.31.1/hugo_0.31.1_Linux-64bit.tar.gz",
         ).in_dir(DIR.gen).run()
 
-        DIR.gen.chdir()cat
+        DIR.gen.chdir()
         patoolib.extract_archive(DIR.gen/"hugo_0.31.1_Linux-64bit.tar.gz")
         DIR.gen.joinpath("hugo_0.31.1_Linux-64bit.tar/").move(hugo_dir)
         DIR.gen.joinpath("hugo_0.31.1_Linux-64bit.tar.gz").remove()
