@@ -96,5 +96,6 @@ def push():
     Push changes in hitchdev.github.com.
     """
     git = Command("git").in_dir(DIR.project/".."/"hitchdev.github.io")
+    git("add", ".").run()
     git("commit", "-m", "Updates").run()
     git("push").run()
