@@ -41,16 +41,15 @@ def buildprojectdocs(projectdir, projectname):
     DIR.project.joinpath("content", projectname).rmtree(ignore_errors=True)
 
     for document in list(project_docs.walkfiles()):
-        relative_path = document.replace(project_docs, "")
+        relative_path = document.replace(project_docs + '/', "")
         content_path = DIR.project.joinpath("content", projectname)
-        write_path = content_path.joinpath(relative_path[1:])
-        write_path_md = write_path.dirname().joinpath("{0}.md".format(write_path.namebase))
+        write_path = content_path.joinpath(relative_path)
 
-        if not write_path_md.dirname().exists():
-            write_path_md.dirname().makedirs()
-        if write_path_md.exists():
-            write_path_md.remove()
-        document.copy(write_path_md)
+        if not write_path.dirname().exists():
+            write_path.dirname().makedirs()
+        if write_path.exists():
+            write_path.remove()
+        document.copy(write_path)
 
 def buildall():
     """
