@@ -11,10 +11,10 @@ Current fully documented projects:
 - [StrictYAML](strictyaml) -- YAML parser and validator that parses a restricted subset of the YAML spec.
 - [HitchStory](hitchstory) -- StrictYAML based BDD framework.
 - [SeleniumDirector](seleniumdirector) -- declare page (CSS/ID/xpath/etc.) selectors and give them readable names which can be used in readable python code or tests.
+- [Commandlib](commandlib) - invoke UNIX commands with an easy to use, pythonic API.
 
 Projects that will be documented soon:
 
-- [commandlib](https://github.com/crdoconnor/commandlib) - invoke UNIX commands with an easy to use, pythonic API.
 - [pathquery](https://github.com/crdoconnor/pathquery) - declaratively API to recursively search for files.
 - [dirtemplate](https://github.com/hitchdev/dirtemplate) - create and build templated directories using jinja2 (used for documentation generation).
 - [pretendsmtp](https://github.com/hitchdev/pretendsmtp) - mock SMTP server.
@@ -26,7 +26,7 @@ Projects that will be documented soon:
 - [hitchkey](https://github.com/hitchdev/hitchkey) - python project command runner and invoker that sets up its own virtualenv and working directories.
 - [prettystack](https://github.com/crdoconnor/prettystack) - display pretty stacktraces in python.
 
-Build tools that will be documented soon:
+Build tools that will be documented soons:
 
 - [hitchbuildpy](https://github.com/hitchdev/hitchbuildpy) - tool to precisely build virtualenvs from specified versions of python (bundles pyenv).
 - [hitchbuildpg](https://github.com/hitchdev/hitchbuildpg) - tool to precisely build development/testing postgres databases from scratch (installs postgres itself).

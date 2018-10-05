@@ -58,6 +58,7 @@ def buildall():
     buildprojectdocs("strictyaml", "strictyaml")
     buildprojectdocs("story", "hitchstory")
     buildprojectdocs("seleniumdirector", "seleniumdirector")
+    buildprojectdocs("commandlib", "commandlib")
 
 
 def test():

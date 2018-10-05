@@ -3,6 +3,7 @@ public
 content/strictyaml
 content/hitchstory
 content/seleniumdirector
+content/commandlib
 hitch/gen
 hitch/__pycache__
 *.kate-swp

@@ -64,6 +64,11 @@ PygmentsStyle = "fruity"
 	url    = "seleniumdirector/"
 	weight = 10
 
+[[menu.main]]
+	name   = "CommandLib"
+	url    = "commandlib/"
+	weight = 10
+
 
 [blackfriday]
 	smartypants = true
