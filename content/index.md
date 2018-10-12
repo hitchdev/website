@@ -6,12 +6,16 @@ type: index
 
 HitchDev is a group of self contained, heavily dogfooded python libraries - mainly used for setting up and running dev and test environments:
 
-Current fully documented projects:
+Fully documented general tools:
 
 - [StrictYAML](strictyaml) -- YAML parser and validator that parses a restricted subset of the YAML spec.
-- [HitchStory](hitchstory) -- StrictYAML based BDD framework.
-- [SeleniumDirector](seleniumdirector) -- declare page (CSS/ID/xpath/etc.) selectors and give them readable names which can be used in readable python code or tests.
 - [Commandlib](commandlib) - invoke UNIX commands with an easy to use, pythonic API.
+
+Fully documented testing projects:
+
+- [HitchStory](hitchstory) -- StrictYAML based BDD framework.
+- [HitchRunPy](hitchrunpy) - tool to invoke and run snippets of python code.
+- [SeleniumDirector](seleniumdirector) -- declare page (CSS/ID/xpath/etc.) selectors and give them readable names which can be used in readable python code or tests.
 
 Projects that will be documented soon:
 
@@ -20,7 +24,6 @@ Projects that will be documented soon:
 - [pretendsmtp](https://github.com/hitchdev/pretendsmtp) - mock SMTP server.
 - [templex](https://github.com/crdoconnor/templex) - templated regex matcher
 - [faketime](https://github.com/crdoconnor/commandlib) - tool to lie to running processes (e.g. CPython or postgres) about the current system time.
-- [hitchrunpy](https://github.com/hitchdev/hitchrunpy) - tool to invoke and run snippets of python code.
 - [xeger](https://github.com/crdoconnor/xeger) - generate strings from regular expressions.
 - [icommandlib](https://github.com/crdoconnor/icommandlib) - extension to commandlib to invoke and interact with running UNIX commands.
 - [hitchkey](https://github.com/hitchdev/hitchkey) - python project command runner and invoker that sets up its own virtualenv and working directories.

@@ -59,6 +59,7 @@ def buildall():
     buildprojectdocs("story", "hitchstory")
     buildprojectdocs("seleniumdirector", "seleniumdirector")
     buildprojectdocs("commandlib", "commandlib")
+    buildprojectdocs("runpy", "hitchrunpy")
 
 
 def test():

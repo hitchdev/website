@@ -4,6 +4,7 @@ content/strictyaml
 content/hitchstory
 content/seleniumdirector
 content/commandlib
+content/hitchrunpy
 hitch/gen
 hitch/__pycache__
 *.kate-swp

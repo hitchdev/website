@@ -60,6 +60,12 @@ PygmentsStyle = "fruity"
 	weight = 10
 
 [[menu.main]]
+	name   = "HitchRunPy"
+	url    = "hitchrunpy/"
+	weight = 10
+
+
+[[menu.main]]
 	name   = "SeleniumDirector"
 	url    = "seleniumdirector/"
 	weight = 10
