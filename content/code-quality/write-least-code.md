@@ -2,13 +2,15 @@
 title: Write the least code possible
 ---
 
+{{< info title="Fundamental" >}}
 If you don't need it, don't write it.
+{{< /warning >}}
 
-If you wrote it twice or thrice, deduplicate it.
+Writing the least code possible 
 
 Subprinciples
 -------------
 
-* DRY
-* Don't reinvent the wheel
-* YAGNI
+* [DRY](dry)
+* [Don't reinvent the wheel](dont-reinvent-the-wheel)
+* [YAGNI](yagni)
