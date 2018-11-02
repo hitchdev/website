@@ -1,6 +1,6 @@
-----
+---
 title: Clear naming
-----
+---
 
 Naming is applied in various different contexts that apply to code:
 
