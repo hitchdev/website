@@ -1,5 +1,5 @@
 ---
-title: Write terse code
+title: The least code principle
 ---
 
 {{< warning title="Axiomatic trade off quality" >}}
