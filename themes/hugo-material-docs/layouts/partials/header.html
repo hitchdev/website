@@ -7,7 +7,16 @@
     </div>
     <div class="stretch">
       <div class="title">
-        {{ .Title }}
+        {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+        {{ $.Scratch.Add "path" .Site.BaseURL }}
+        <a style="display:inline;" href="/">hitchdev</a>
+        {{ range $index, $element := split $url "/" }}
+          {{ $.Scratch.Add "path" $element }}
+            {{ if ne $element "" }}
+            / <a style="display:inline;" href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>
+            {{ $.Scratch.Add "path" "/" }}
+            {{ end }}
+        {{ end }}
       </div>
     </div>
 
