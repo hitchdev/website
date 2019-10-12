@@ -16,6 +16,7 @@ Fully documented testing projects:
 - [HitchStory](hitchstory) -- StrictYAML based BDD framework.
 - [HitchRunPy](hitchrunpy) - tool to invoke and run snippets of python code.
 - [SeleniumDirector](seleniumdirector) -- declare page (CSS/ID/xpath/etc.) selectors and give them readable names which can be used in readable python code or tests.
+- [Faketime](faketime) -- lie to UNIX processes about the current time/date - useful for date and time dependent user stories.
 
 Projects that will be documented soon:
 
