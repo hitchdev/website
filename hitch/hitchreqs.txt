@@ -42,5 +42,5 @@ wcwidth==0.1.7            # via prompt-toolkit
 wheel==0.30.0             # via pypandoc
 
 # The following packages are considered to be unsafe in a requirements file:
-# pip                       # via hitchrun, pypandoc
-# setuptools                # via ipython, pypandoc
+# pip==19.2.3               # via hitchrun, pypandoc
+# setuptools==41.2.0        # via ipython, pypandoc

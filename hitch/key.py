@@ -13,14 +13,14 @@ def install():
     """
     if hugo_dir.exists():
         hugo_dir.rmtree(ignore_errors=True)
-    #Command(
-        #"wget", 
-        #"https://github.com/gohugoio/hugo/releases/download/v0.50/hugo_0.50_Linux-64bit.tar.gz",
-    #).in_dir(DIR.gen).run()
+    Command(
+        "wget", 
+        "https://github.com/gohugoio/hugo/releases/download/v0.50/hugo_0.50_Linux-64bit.tar.gz",
+    ).in_dir(DIR.gen).run()
 
-    #DIR.gen.chdir()
-    #patoolib.extract_archive(DIR.gen/"hugo_0.50_Linux-64bit.tar.gz")
-    #DIR.gen.joinpath("hugo_0.50_Linux-64bit.tar").move(hugo_dir)
+    DIR.gen.chdir()
+    patoolib.extract_archive(DIR.gen/"hugo_0.50_Linux-64bit.tar.gz")
+    DIR.gen.joinpath("hugo_0.50_Linux-64bit.tar").move(hugo_dir)
     DIR.gen.joinpath("hugo_0.50_Linux-64bit.tar.gz").remove()
 
     Command(
