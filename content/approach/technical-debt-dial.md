@@ -1,5 +1,5 @@
 ---
-title: The Technical Debt Dial: We don't need better metaphors for technical debt. We need better units of account.
+title: The Technical Debt Dial - We don't need better metaphors for technical debt. We need better units of account.
 ---
 
 Week 41:
