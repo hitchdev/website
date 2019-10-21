@@ -16,7 +16,7 @@ PygmentsStyle = "fruity"
 	# General information
 	author = "Colm O'Connor"
 	description = "The code that specifies | builds | runs | tests | documents your code."
-	copyright = "Copyright (C) 2018"
+	copyright = "Copyright (C) 2019"
 
 	# Repository
 # 	provider = "GitHub"
@@ -73,6 +73,12 @@ PygmentsStyle = "fruity"
 [[menu.main]]
 	name   = "CommandLib"
 	url    = "commandlib/"
+	weight = 10
+
+
+[[menu.main]]
+	name   = "Faketime"
+	url    = "faketime/"
 	weight = 10
 
 

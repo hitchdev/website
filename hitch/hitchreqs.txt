@@ -20,7 +20,7 @@ mkdocs-bootswatch==0.4.0
 mkdocs==0.16.3
 parso==0.1.0              # via jedi
 path.py==10.5             # via hitchrun, pathquery, prettystack
-pathquery==0.2.2
+pathquery==0.3.0
 patool==1.12
 pelican==3.7.1
 pexpect==4.3.0            # via ipython
@@ -43,4 +43,4 @@ wheel==0.30.0             # via pypandoc
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip==19.2.3               # via hitchrun, pypandoc
-# setuptools==41.2.0        # via ipython, pypandoc
+# setuptools==41.4.0        # via ipython, pypandoc

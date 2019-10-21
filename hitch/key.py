@@ -1,6 +1,6 @@
 from commandlib import python_bin, Command, CommandError
 from hitchrun import DIR, expected
-from pathquery import pathq
+from pathquery import pathquery
 import patoolib
 import shutil
 
@@ -73,6 +73,8 @@ def buildall():
     buildprojectdocs("seleniumdirector", "seleniumdirector")
     buildprojectdocs("commandlib", "commandlib")
     buildprojectdocs("runpy", "hitchrunpy")
+    for indexmd in pathquery(DIR.project / "content").named("index.md"):
+        indexmd.rename(indexmd.dirname() / "_index.md")
 
 
 def test():
@@ -95,7 +97,7 @@ def publish():
     buildall()
     hugo()
     print("Moving...")
-    for filepath in list(pathq(html_in)):
+    for filepath in list(pathquery(html_in)):
         dest = DIR.project.parent.joinpath("hitchdev.github.io", filepath.relpath(html_in))
         if not dest.dirname().exists():
             dest.dirname().makedirs()
