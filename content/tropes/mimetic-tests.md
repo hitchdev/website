@@ -1,25 +1,50 @@
 ---
-title: The Mirror Test
+title: Mimetic Tests
 ---
 
-The mirror test is a kind of test which *mirrors* the implementation of
-the code rather than testing the behavior. They are most typically
-unit tests.
+A mimetic is a kind of test which mimics the implementation of
+the code rather than testing the behavior. They are a common
+form of unit test.
 
-## How do you know if you've got a mirror test?
+![Like mimes, mimetic tests are a disappointment to their parents](https://upload.wikimedia.org/wikipedia/commons/a/a1/Nithor_Mime_Artist.jpg)
 
-A key defining feature of a mirror test is that it
-*fails when the code under test has changed*
-irrespective of whether or not there is a bug.
+## How do you know if you've got a mimetic test?
 
-Mirror tests not only impose a cost in terms of the cost to
+A fully mimetic test fails when 100% of the failures
+of the test are caused by code being changed
+rather than the presence of a bug or lack of
+desired functionality.
+
+Note that [flakiness](flaky-tests) is different to mimeticism.
+
+## What if a test fails 10% of the time solely because code changed?
+
+Congratulations, your test is useful! In practice almost every
+test will be at least slightly mimetic, so a small number of
+failures caused by code changes is ok, provided this is
+acknowledged as a bug (however minor).
+
+## What's wrong with mimetic tests
+
+Mimetic tests not only impose a cost in terms of the cost to
 build, they also impose an ongoing maintenance cost as
-changes to the code 
+changes to the code will require changes to tests.
 
+Mimetic tests also don't catch much beyond the most trivial
+bugs (e.g. syntax error).
 
-## Why does anybody write mirror tests?
+A high proportion of mimetic tests often leads to 
+[test case abandonment].
 
-Mirror tests tend to crop up when developers write code first and then
+## Why does anybody write mimetic tests if they are so useless?
+
+Mimetic tests tend to crop up when developers write code first and then
 decide afterwards that their code needs some tests. They see classes
-and think "I should write some tests for that class". This "locks down"
-the implementation.
+and think "I should write some tests for that class or method".
+
+Classes are implementation details. Methods are implementation
+details. 
+
+Unit tests lend themselves naturally to mimeticism simply
+because they are inherently designed in such a way as to test
+implementation rather than behavior.
