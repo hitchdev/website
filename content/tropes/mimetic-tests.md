@@ -41,6 +41,7 @@ A high proportion of mimetic tests often leads to
 Mimetic tests tend to crop up when developers write code first and then
 decide afterwards that their code needs some tests. They see classes
 and think "I should write some tests for that class or method".
+Sometimes these are [goodhart's tests](goodharts-tests).
 
 Classes are implementation details. Methods are implementation
 details. 
