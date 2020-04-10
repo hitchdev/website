@@ -24,7 +24,7 @@ Projects that will be documented soon:
 - [dirtemplate](https://github.com/hitchdev/dirtemplate) - create and build templated directories using jinja2 (used for documentation generation).
 - [pretendsmtp](https://github.com/hitchdev/pretendsmtp) - mock SMTP server.
 - [templex](https://github.com/crdoconnor/templex) - templated regex matcher
-- [faketime](https://github.com/crdoconnor/commandlib) - tool to lie to running processes (e.g. CPython or postgres) about the current system time.
+- [faketime](https://github.com/crdoconnor/faketime) - tool to lie to running processes (e.g. CPython or postgres) about the current system time.
 - [xeger](https://github.com/crdoconnor/xeger) - generate strings from regular expressions.
 - [icommandlib](https://github.com/crdoconnor/icommandlib) - extension to commandlib to invoke and interact with running UNIX commands.
 - [hitchkey](https://github.com/hitchdev/hitchkey) - python project command runner and invoker that sets up its own virtualenv and working directories.
